@@ -22,7 +22,7 @@ function Roles() {
                         <img src="/assets/usuario.svg" />
                         <span>Usuarios existentes</span>
                     </div>
-                    <button data-toggle="modal" data-target="#modalCreate" onClick={() => openCreate()}>Crear</button>
+                    <button data-toggle="modal" data-target="#modalCreate" className="onlyPc btnCreateUser" onClick={() => openCreate()}>Crear</button>
                 </div>
                 <div className="tableRolesTableContainer">
                     <table className="tableRolesTable">
@@ -39,7 +39,7 @@ function Roles() {
                             </tr>
                         </thead>
                         <tbody>
-                            {users.slice(activePage*itemsPerPage, (activePage+1)*itemsPerPage).map((user, index) => {
+                            {users.slice(activePage * itemsPerPage, (activePage + 1) * itemsPerPage).map((user, index) => {
                                 return <tr>
                                     <th className="capitalize">{user.data().name}</th>
                                     <th className="capitalize">{user.data().surname}</th>
@@ -65,15 +65,19 @@ function Roles() {
                     <div className="navigationContainer">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                                <li class="page-item"><a class="page-link" onClick={() => activePage > 0 ? setActivePage(activePage - 1) : { }}>Anterior</a></li>
+                                <li class="page-item"><a class="page-link" onClick={() => activePage > 0 ? setActivePage(activePage - 1) : {}}>Anterior</a></li>
                                 {Array.apply(null, { length: Math.ceil(users.length / itemsPerPage) }).map((e, i) => (
                                     <li class="page-item"><a class="page-link" onClick={() => { setActivePage(i) }}>{i}</a></li>
                                 ))}
-                                <li class="page-item"><a class="page-link" onClick={() => activePage < Math.ceil(users.length / itemsPerPage) ? setActivePage(activePage + 1): {} }>Siguiente</a></li>
+                                <li class="page-item"><a class="page-link" onClick={() => activePage < Math.ceil(users.length / itemsPerPage) ? setActivePage(activePage + 1) : {}}>Siguiente</a></li>
                             </ul>
                         </nav>
                     </div> : ''
                 }
+                <div className="onlyPhone containerCreateUserPhone">
+                    <button data-toggle="modal" data-target="#modalCreate" className="btnCreateUser" onClick={() => openCreate()}>Crear</button>
+                </div>
+
             </div>
             <div className="filterMenuRoles">
                 <div className="header">
@@ -269,7 +273,7 @@ function Roles() {
         })
     }
 
-    function loadUsers(){
+    function loadUsers() {
         firebase.firestore().collection('users').get().then(querySnapshot => {
             var queryUsers = [];
             querySnapshot.forEach((doc) => {

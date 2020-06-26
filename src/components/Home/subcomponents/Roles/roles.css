@@ -36,7 +36,7 @@
 
 }
 
-.tableRoles>.header>button{
+.btnCreateUser{
     background-color: #1d43ad;
     color: white;
     padding: 0.1em 1.2em;
@@ -137,6 +137,17 @@ form>.form-group{
     }
     .navigationContainer{
         justify-content: center;
+    }
+    .containerCreateUserPhone{
+        width: 100%;
+        margin-top: 1em;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .btnCreateUser{
+        padding: 0.3em 0.5em;
+        width: 95px;
+        font-size: 16px;
     }
 }
 
