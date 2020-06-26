@@ -1,0 +1,193 @@
+.homeContainer{
+    display: flex;
+    background-color: #eaeaea;
+}
+
+.slideBar{
+    background: rgb(66,172,239);
+    background: linear-gradient(180deg, rgba(66,172,239,1) 0%, rgba(30,68,174,1) 100%);
+    color: white;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 320px;
+}
+.slideAnimation{
+    animation-name: openSlideBarAnmiation;
+    animation-duration: 0.5s;
+}
+.titleSlideBar{
+    display: flex;
+    padding-bottom: 1em;
+    font-size: 1.2em;
+    border-bottom: solid thin white;
+}
+.circleSlideBar{
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 100%;
+    background-color: white;
+    margin-right: 1em;
+}
+
+.slideBar>a{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em .5em 0.5em 0.7em;
+    margin: 0.5em 0;
+    text-decoration: none;
+}
+
+.slideBar>a>*:first-child{
+    width: 24px;
+    text-align: center;
+}
+.slideBar>a>span{
+    flex: 1;
+    text-align: left;
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+    display: flex;
+    justify-content: space-between;
+}
+.slideBar>a{
+    overflow: hidden;
+    height: 40px;
+}
+.slideBar>a>span, .titleSlideBar>span{
+    overflow: hidden;
+    white-space: nowrap;
+    animation-name: openSlideBarAnmiation2;
+    animation-duration: 0.5s;
+}
+
+
+.menuSelected, .slideBar>a:hover{
+    background-color: #ffffff55;
+    border-radius: 5px;
+}
+
+.titleContainer{
+    color: #1d43ad;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.titleContainer>svg{
+    margin-right: 1em;
+}
+.titleContainer>svg:hover{
+    cursor: pointer;
+}
+
+.routesContainer{
+    width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.routesContainer>header{
+    background-color: white;
+    width: 100%;
+    padding:1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.routesContainer>div{
+    flex:1;
+    overflow-y: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.routesContainer>div>footer{
+    background-color: white;
+    padding: 1em;
+    width: 100%;
+    text-align: right;
+}
+.containerProfileInfo{
+    display: flex;
+    align-items: center;
+}
+.containerProfileInfo>*{
+    margin: 00.4em;
+}
+.imgProfileHeader{
+    height: 2em;
+    width: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.imgProfileHeader>img{
+    height: 100%;
+}
+
+.showSideBarHome>a>span, .showSideBarHome>.titleSlideBar>span{
+    display: none;
+}
+.showSideBarHome{
+    width: 80px;
+}
+.showSideBarHome>.titleSlideBar>.circleSlideBar{
+    margin: auto;
+}
+
+.slideAnimation>.titleSlideBar>.circleSlideBar{
+    margin-left: 0.5em;
+}
+
+@media only screen and (max-width: 992px){
+    .showSideBarHome{
+        display: none;
+    }
+    .slideBar{
+        position: fixed;
+        z-index: 21;
+    }
+    .bgSlider{
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        opacity: 0.3;
+        z-index: 20;
+    }
+
+    .routesContainer>header{
+        box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.75);
+        z-index: 10;
+    }
+}
+@keyframes openSlideBarAnmiation{
+    from {
+        max-width: 80px;
+    }
+    to {
+        max-width: 320px;
+    }
+  }
+  @keyframes openSlideBarAnmiation2{
+    from {
+        opacity: 0;
+        max-width: 0px;
+    }
+    to {
+        opacity: 1;
+        max-width: 320px;
+    }
+  }

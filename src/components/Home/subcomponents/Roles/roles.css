@@ -1,0 +1,152 @@
+.rolesContainer{
+    display: flex;
+}
+.rolesContainer>.tableRoles, .rolesContainer>.filterMenuRoles{
+    margin: 1em;
+    background-color: white;
+    border-radius: 2px;
+    padding: 2em;
+}
+
+.tableRoles{
+    flex: 1;
+    margin-right:  0 !important;
+    overflow-x: hidden;
+}
+.tableRolesTableContainer{
+    overflow-x: auto;
+}
+.tableRoles>.header, .filterMenuRoles>.header{
+    width: 100%;
+    display: flex;
+    color: #1d43ad;
+    font-size: 1.4em;
+    align-items: center;
+}
+
+.tableRoles>.header{
+    justify-content: space-between;
+}
+.tableRoles>.header>div{
+    display: flex;
+    align-items: center;
+}
+.tableRoles>.header>div>span, .filterMenuRoles>.header>span{
+    margin-left: 0.8em;
+
+}
+
+.tableRoles>.header>button{
+    background-color: #1d43ad;
+    color: white;
+    padding: 0.1em 1.2em;
+    border-radius: 5px;
+    font-size: 0.9em;
+    border: none;
+    font-weight: normal;
+}
+.tableRolesTable{
+    margin-top: 2em;
+    width: 100%;
+    overflow-x: auto;
+}
+.tableRolesTable>thead{
+    border-bottom: solid thin #bbbbbb;
+}
+
+.tableRolesTable>thead>tr>th,.tableRolesTable>tbody>tr>th{
+    font-weight: normal;
+    padding-bottom: 0.5em;
+    padding-right: 1em;
+}
+.tableRolesTable>tbody>tr>th{
+    font-weight: lighter;
+    color: #999999;
+    padding: 0.5em 1em 0.5em 0;
+}
+
+.thOptions>*{
+    margin-right: 1em;
+}
+
+.filterMenuRoles{
+    width: 270px;
+}
+
+form>.form-group{
+    margin-top: 1em;
+}
+.buttonFormContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttonFormContainer>button{
+    padding: 0.3em 0.5em;
+    width: 95px;
+}
+.filterButton{
+    color: white;
+    background: rgb(153,201,92);
+    background: linear-gradient(90deg, rgba(153,201,92,1) 0%, rgba(100,155,33,1) 100%);
+}
+
+.filterButton:hover,.clearButton:hover{
+    color: white;
+    cursor: pointer;
+    background: rgb(153,201,92);
+}
+
+.clearButton{
+    color: rgb(153,201,92);
+    border: solid thin rgb(153,201,92);
+}
+.filterButton:hover,.clearButton:hover{
+    color: white;
+    cursor: pointer;
+    background: rgb(153,201,92);
+}
+
+.navigationContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#modalCreate .modal-header .close{
+    color: red;
+    font-size: 2em;
+    font-weight: lighter;
+}
+
+#formCreateUser .modal-content {
+    border-radius: 1rem;
+}
+#formCreateUser>.buttonFormContainer{
+    justify-content: center;
+}
+#formCreateUser>.buttonFormContainer>button{
+    margin: 1em;
+}
+@media only screen and (max-width: 992px){
+    .rolesContainer{
+        flex-direction: column-reverse;
+    }
+    .rolesContainer>div{
+        width: calc(100% - 2em);
+    }
+    .navigationContainer{
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    #formCreateUser{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    #formCreateUser>.form-group{
+        width: 47%;
+    }
+}

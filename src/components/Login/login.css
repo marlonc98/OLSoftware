@@ -1,0 +1,188 @@
+.bgImgLogin{
+    width: 80%;
+    height: 90vh;
+    border-radius:0% 0% 56% 43% / 4% 0% 100% 40% ;
+    overflow: hidden;
+    background-image: url('/assets/login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.bgImgLogin::before{
+    width: 80%;
+    height: 90vh;
+    border-radius:0% 0% 56% 43% / 4% 0% 100% 40% ;
+    overflow: hidden;
+    content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.mainContainerLogin{
+    width: 100%;
+    padding: 10%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: flex;
+    justify-content: space-between;
+}
+.mainContainerLogin>.welcomeTitleLogin{
+    margin-top: 5em;
+    margin-left: 7em;
+    color: white;
+    z-index: 1;
+}
+.mainContainerLogin>.welcomeTitleLogin>h5{
+    font-size: 2.6em;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+.mainContainerLogin>.welcomeTitleLogin>span{
+    font-size: 1.25em;
+}
+
+.containerFormLogin{
+    margin-left: 10px;
+    padding: 3em 5em 5em 5em;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0px 0px 120px 0px rgba(144, 144, 144, 0.72);
+    width: 32.5em;
+    height: 30em;
+}
+
+.containerFormLogin>form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.containerFormLogin>form>*{
+    width: 100%;
+}
+
+.containerFormLogin>form>h5{
+    text-align: center;
+    color: #545454;
+    font-size: 2.5em;
+}
+
+.inputsLoginContainer{
+    box-shadow: 0px 0px 7px 1px rgba(144, 144, 144, 0.38);
+    border: solid thin #cccccc;
+}
+.inputsLoginContainer>.inputLogin:not(:first-child){
+    border-top: solid thin #cccccc;
+}
+.inputLogin{
+    position: relative;
+}
+.inputLogin>input{
+    border: none;
+    font-size: 1.2em;
+    width: 100%;
+    padding: 1.5em 3em 1.5em 1.5em;
+}
+.inputLogin>svg{
+    position: absolute;
+    right: 1.5em;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+#errorLoginText{
+    color: red;
+}
+
+.containerFormLogin>form>button{
+    background-color: #2f51e0;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 0.8em;
+}
+.olsMark{
+    text-align: center;
+    margin-top: 3em;
+    font-weight: 500;
+}
+
+#modalLoginOpen>.modal-dialog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+.dotsLoadingContainer{
+    display: flex;
+    width: 7em;
+    height: 5em;
+    margin-top: 2em;
+    justify-content: space-between;
+}
+.dotLoading{
+    background-color: white;
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    animation: dotsAnimation 4s infinite;
+}
+.dotsLoadingContainer>.dotLoading:nth-child(2){
+    animation-delay: 1s;
+}
+
+.dotsLoadingContainer>.dotLoading:nth-child(3){
+    animation-delay: 2s;
+}
+
+@media only screen and (max-width: 992px){
+    .mainContainerLogin{
+        flex-direction: column;
+        align-items: center;
+    }
+    .mainContainerLogin>.welcomeTitleLogin{
+        margin: auto auto 1.5em auto;
+        text-align: center;
+    }
+    .mainContainerLogin>.welcomeTitleLogin>h5{
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .containerFormLogin{
+        padding: 2em;
+        width: 19.5em;
+        height: 23em;
+    }
+    .bgImgLogin{
+        width: 100%;
+        height: 76vh;
+    }
+    .bgImgLogin::before{
+        width: 100%;
+        height: 76vh;
+    }
+
+
+}
+
+@keyframes dotsAnimation {
+    from {transform: scale(1)}
+    25%{transform: scale(2);}
+    45% {transform: scale(1)}
+    to {transform: scale(1)}
+  }
